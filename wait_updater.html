@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <link rel= "stylesheet"  href= "{{ url_for('static', filename='styles.css')}}">
+
+</head>
+<body>
+
+    <div class="data">
+    <p id="output"></p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        function game_status(){
+            $.get("/game_state", function(data){
+                $("#output").html(data)
+            });
+        }
+        
+        game_status()
+        var intervalId = setInterval(function() {
+            game_status()
+        }, 500);
+
+    </script>
+        
+</body>
+</html>
