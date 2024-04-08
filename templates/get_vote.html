@@ -1,0 +1,9 @@
+<form action="{{ url_for("game")}}" method="post">
+    <br>
+    <h2> Which song better fit the prompt better?: </h2>
+    <p> {{data.prompt}} </p>
+    <br>
+    <button name = 'submit_button' type="submit" value = "1">{{data.choice1}}</button>
+    <p> or </p>
+    <button name = 'submit_button' type="submit" value = "2">{{data.choice2}}</button>
+</form>
